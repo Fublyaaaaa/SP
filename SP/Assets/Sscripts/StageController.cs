@@ -4,7 +4,10 @@ using UnityEngine;
 public class StageController : MonoBehaviour
 {
     [Tooltip("Размер сцены в единицах unity (ширина, высота)")]
-    [SerializeField] private Vector2 stageSize = new Vector2(16f, 9f);
+    [SerializeField] private Vector2 stageSize = new Vector2(x, y);
+
+    public static float x = 16f;
+    public static float y = 9f;
 
     private SpriteRenderer spriteRenderer;
 
@@ -29,7 +32,7 @@ public class StageController : MonoBehaviour
 
     public Vector2 GetStageSize() => stageSize;
     
-    private void UpdateStageVisual()
+    public void UpdateStageVisual()
     {
         if (spriteRenderer == null) return;
 
