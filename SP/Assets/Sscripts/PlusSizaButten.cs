@@ -12,7 +12,14 @@ public class PlusSizaButten : MonoBehaviour
         if (stageController != null)
         {
             Vector2 currentSize = stageController.GetStageSize();
+            if(currentSize.x < 24)
+            {
             stageController.SetStageSize(currentSize.x + 1f, currentSize.y);
+            }
+            else
+            {
+              return;
+            }
         }
     }
     public void PlusHeight()
@@ -20,7 +27,14 @@ public class PlusSizaButten : MonoBehaviour
         if (stageController != null)
         {
             Vector2 currentSize = stageController.GetStageSize();
+            if(currentSize.y < 24)
+            {
             stageController.SetStageSize(currentSize.x, currentSize.y + 1f);
+            }
+            else
+            {
+                return;
+            }
         }
     }
     public void MinusHeight()
@@ -28,7 +42,14 @@ public class PlusSizaButten : MonoBehaviour
         if (stageController != null)
         {
             Vector2 currentSize = stageController.GetStageSize();
+            if(currentSize.y > 1)
+            {
             stageController.SetStageSize(currentSize.x, currentSize.y - 1f);
+            }
+            else
+            {
+                return;
+            }
         }
     }
     public void MinusWidth()
@@ -36,7 +57,14 @@ public class PlusSizaButten : MonoBehaviour
         if (stageController != null)
         {
             Vector2 currentSize = stageController.GetStageSize();
+            if(currentSize.x > 1)
+            {
             stageController.SetStageSize(currentSize.x - 1f, currentSize.y);
+            }
+            else
+            {
+                return;
+            }
         }
     }
 
